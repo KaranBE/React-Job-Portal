@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: candara;
+  font-weight: 400;
+  src: url(assets/fonts/candara-regular.ttf);
+}
+@font-face {
+  font-family: candara;
+  font-weight: 800;
+  src: url(assets/fonts/candara-bold.ttf);
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: candara, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  overflow-x: hidden;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.tooltipRequired {
+  opacity: 1;
+  transform: none;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 133ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  position: absolute;
+  right: -5px;
+  top: -39px;
+}
+.navbar-button {
+  border-radius: 3px;
+  border: 1px solid #3a68b8;
+  background: #3a68b8;
+}
+.text-custom-color {
+  color: #3a68b8;
+}
+.carousel {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.carousel_slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.carousel_slide img {
+  max-width: 100%;
+}
+.carousel_history {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel_history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 3px;
+}
+.carousel_history ul li {
+  width: 15%;
+  box-sizing: border-box;
+  height: inherit;
+  position: relative;
+}
+.carousel_history ul li:not(:last-of-type) {
+  margin-right: 5%;
+}
+.carousel_history ul li button {
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+.carousel_history ul li button.active {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.carousel_control {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0;
+  padding: 0 5px;
+  width: 10%;
+  overflow: hidden;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+}
+.carousel_control span {
+  display: inline-block;
+  width: 2vw;
+  height: 2vw;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 0.65;
+  border-bottom: 3px solid white;
+  border-left: 3px solid white;
+  transition: opacity 300ms ease;
+}
+.carousel_control:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.carousel_control:hover span {
+  opacity: 0.95;
+}
+.carousel_control__prev {
+  left: 0;
+  padding-left: 12px;
+}
+.carousel_control__prev span {
+  transform: rotate(45deg);
+}
+.carousel_control__next {
+  right: 0;
+  padding-right: 12px;
+}
+.carousel_control__next span {
+  transform: rotate(-135deg);
+}
+.leave {
+  transform: translateX(0);
+}
+.enter-active.enter-next,
+.enter-active.enter-prev {
+  transform: translateX(0);
+  transition: transform 500ms linear;
+}
+.enter-next {
+  transform: translateX(100%);
+}
+.enter-prev {
+  transform: translateX(-100%);
+  transition: transform 500ms linear;
+}
+.leave-active-next {
+  transform: translateX(-100%);
+  transition: transform 500ms linear;
+}
+.leave.leave-active-prev {
+  transform: translateX(100%);
+  transition: transform 500ms linear;
+}
+
+.phoneNumber::placeholder,
+input::placeholder {
+  color: #3a68b8;
+  font-weight: bold;
+}
+
+.notes::placeholder {
+  font-weight: bold;
+  top: 0;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  vertical-align: top;
+  color: #3a68b8;
+}
+
+.notes:focus {
+  outline: none !important;
+  border: 1px solid #3b82f680;
+}
+
+.select-input span {
+  background-color: #3b82f680;
+}
+
+.border-blue,
+.select-input span {
+  border: 1px solid #3b82f680;
+}
+
+@media (max-width: 1024px) {
+  .select-input > div > div {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .select-input > div > div {
+    min-height: 80px;
+  }
+  .send {
+    display: none !important;
+  }
+  .sendMobile {
+    display: flex !important;
+  }
+
+  .sendMobile button {
+    border-radius: 9999px !important;
+    padding: 0.75rem !important;
+    color: rgb(58, 104, 184);
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(25, 28, 42);
+  }
+  .carousel_history {
+    left: 39% !important;
+  }
+}
+.send button {
+  background-color: rgb(25, 28, 42);
+}
+
+.modal-backdrop {
+  background-color: #212529;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  z-index: 49;
+  margin-left: -120px;
+}

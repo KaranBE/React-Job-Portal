@@ -1,0 +1,75 @@
+{
+  "name": "landing",
+  "homepage": ".",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.1.2",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-addons-css-transition-group": "^15.0.5",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-transition-group": "^4.4.1",
+    "env-cmd": "^10.1.0",
+    "formik": "^2.2.8",
+    "hamburger-react": "^2.4.1",
+    "react": "^17.0.2",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^17.0.2",
+    "react-intersection-observer": "^8.32.0",
+    "react-measure": "^2.5.2",
+    "react-number-format": "^4.6.3",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "react-transition-group": "^1.2.1",
+    "source-map-explorer": "^2.5.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "start:dev": "env-cmd -e dev craco start",
+    "build:dev": "env-cmd -e dev craco build",
+    "start:stag": "env-cmd -e stag craco start",
+    "build:stag": "env-cmd -e stag craco build",
+    "start:prod": "env-cmd -e prod craco start",
+    "build:prod": "env-cmd -e prod craco build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/brainhubeu__react-carousel": "^2.0.2",
+    "@types/react-measure": "^2.0.6",
+    "@types/react-select": "^4.0.15",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
+  }
+}
